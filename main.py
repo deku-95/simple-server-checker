@@ -83,5 +83,7 @@ try:
 
 
 except KeyboardInterrupt:
+    import sys
+
     print("\n\t--- Exiting checker ---\n")
-    exit()
+    sys.exit()
