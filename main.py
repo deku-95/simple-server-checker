@@ -1,7 +1,7 @@
 """
 Server Status Checker
 
-A server status checker is a script that will let you monitor if your server is active and running.
+Script that will let you monitor if your server is active and running.
 It can show you how much downtime your server has had and give you regular updates.
 It'll also send immediate alerts through gmail when server is down.
 """
@@ -23,8 +23,6 @@ country_time = timezone(timedelta(hours=9), "JST")  # Set your timezone.
 def send_email(time_down):
     """
     The function sends an email to the destination address when the server is down.
-    It writes
-
     """
 
     # Gmail Login Information
@@ -40,8 +38,8 @@ def send_email(time_down):
 
     # Mail Message
     subject = f"Attention, {IP} is down"
-    from_address = "Server Status Checker"  # This is the sender's email name.
-    to_address = "example@example.com"  # The destination email address.
+    from_address = "Server Status Checker"  # Sender's email name.
+    to_address = "example@example.com"  # Destination email address.
     body_text = f"{time_down} {IP} is down"
     # --------------------- #
     msg = MIMEText(body_text)
@@ -57,7 +55,7 @@ def send_email(time_down):
 
 def main():
     """
-    It checks if the server is up or down, and if it's down, it sends an email
+    It checks if the server is up or down, and if it's down, it sends an email.
     """
 
     time.sleep(15)  # Wait 15 seconds before checking again.
