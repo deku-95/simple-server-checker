@@ -64,11 +64,11 @@ def main():
     time_now = datetime.now(country_time).strftime("%Y-%m-%d %H:%M:%S")
     try:
         socket.create_connection((IP, PORT), 2)
-        print(f"\x1b[32m {time_now}  {IP} is up \x1b[0m")
+        print(f" {time_now}  {IP} is up")
         with open("log.txt", "a", encoding="utf8") as log:
             log.write(f"{time_now} {IP} is up\n")
     except OSError:
-        print(f"\x1b[31m {time_now}  {IP} is down\x1b[0m")
+        print(f"{time_now}  {IP} is down")
         # Send email
         send_email(time_now)
         with open("log.txt", "a", encoding="utf8") as log:
